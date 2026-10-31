@@ -16,7 +16,7 @@
     const lightbox = document.getElementById('lightbox');
     const lbImg = lightbox.querySelector('img');
 
-    const narrow = window.matchMedia('(max-width: 820px)');
+    const narrow = window.matchMedia('(max-width: 820px), (max-height: 520px)');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const DUR = reduceMotion ? 20 : 900;
 
@@ -41,8 +41,10 @@
     /* ---------- Sizing ---------- */
 
     function size() {
-        const vw = window.innerWidth;
-        const vh = window.innerHeight;
+        // clientWidth/visualViewport stay put on phones; innerWidth grows with the page
+        const vw = document.documentElement.clientWidth;
+        const vh = Math.min(document.documentElement.clientHeight,
+            window.visualViewport ? window.visualViewport.height : window.innerHeight);
         let pw, ph, fs;
         if (!narrow.matches) {
             const aw = vw - 72;
@@ -418,32 +420,13 @@
     const track = document.querySelector('.ticker-track');
     if (track) track.appendChild(track.firstElementChild.cloneNode(true));
 
-    /* ---------- Random letters falling behind the book ---------- */
-
-    const fallLayer = document.getElementById('falling');
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    function fall() {
-        if (document.hidden) return;
-        const t = document.createElement('span');
-        t.className = 'fall';
-        let s = '';
-        const len = Math.floor(Math.random() * 10) + 5;
-        for (let i = 0; i < len; i++) s += chars.charAt(Math.floor(Math.random() * chars.length));
-        t.textContent = s;
-        t.style.left = (Math.random() * 100) + 'vw';
-        const d = Math.random() * 6 + 7;
-        t.style.animationDuration = d + 's';
-        fallLayer.appendChild(t);
-        setTimeout(() => t.remove(), d * 1000 + 200);
-    }
-    if (!reduceMotion) setInterval(fall, 550);
-
     /* ---------- Start ---------- */
 
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
+            if (!lightbox.hidden) return;
             size();
             if ((narrow.matches ? 'single' : 'spread') !== mode) build();
             else if (visiblePages().some(p => p.classList.contains('draw-page'))) fitCanvas();
