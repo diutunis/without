@@ -148,12 +148,22 @@
         }
     }
 
-    // Resting state: stacking order, hidden faces, live media
+    // Which leaves need to exist on screen right now: the open page(s) and the one under each
+    function nearLeaf(i) {
+        if (mode === 'single') return i === cur || i === cur + 1;
+        return i >= cur - 2 && i <= cur + 1;
+    }
+
+    // Resting state: stacking order, hidden faces, live media.
+    // Leaves far from the open page are display:none, so phones only ever
+    // composite a handful of 3D layers.
     function settle() {
         z = 100;
         const count = leaves.length;
         leaves.forEach((l, i) => {
             const f = l.classList.contains('flipped');
+            l.classList.remove('instant');
+            l.classList.toggle('far', !nearLeaf(i));
             l.style.zIndex = f ? i + 1 : count - i + 1;
             l.children[0].classList.toggle('off', f);
             l.children[1].classList.toggle('off', !f || mode === 'single');
@@ -215,14 +225,34 @@
         if (fwd) for (let i = cur; i < target; i++) list.push(i);
         else for (let i = cur - 1; i >= target; i--) list.push(i);
 
-        // Several leaves at once riffle through with a short stagger
-        const stagger = list.length > 1 ? Math.max(30, Math.min(120, 900 / list.length)) : 0;
+        // Long jumps: turn most leaves instantly (off screen), animate only the last few
+        const animate = list.slice(-4);
+        const silent = list.slice(0, list.length - animate.length);
+        silent.forEach(i => {
+            const l = leaves[i];
+            l.classList.add('instant', 'far');
+            l.classList.remove('top-r', 'top-l');
+            l.classList.toggle('flipped', fwd);
+        });
 
-        list.forEach((i, k) => {
+        // Bring the leaves that will move, and the ones they land on, onto the screen
+        const show = new Set(animate);
+        [target - 2, target - 1, target, target + 1].forEach(i => {
+            if (i >= 0 && i < leaves.length && (mode === 'spread' || i >= target)) show.add(i);
+        });
+        show.forEach(i => {
+            const l = leaves[i];
+            l.classList.remove('far', 'instant');
+            l.children[0].classList.remove('off');
+            if (mode === 'spread' || animate.includes(i)) l.children[1].classList.remove('off');
+        });
+        // Leaves landing underneath (not moving) sit below everything that moves
+        void book.offsetWidth;
+
+        const stagger = animate.length > 1 ? 110 : 0;
+        animate.forEach((i, k) => {
             const l = leaves[i];
             l.classList.remove('top-r', 'top-l');
-            l.children[0].classList.remove('off');
-            l.children[1].classList.remove('off');
             setTimeout(() => {
                 l.style.zIndex = ++z;
                 l.classList.toggle('flipped', fwd);
@@ -232,7 +262,7 @@
         cur = target;
         chrome();
         clearTimeout(settleTimer);
-        settleTimer = setTimeout(settle, DUR + (list.length - 1) * stagger + 40);
+        settleTimer = setTimeout(settle, DUR + (animate.length - 1) * stagger + 60);
     }
 
     const next = () => flipTo(cur + 1);
