@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>without end</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Courier+Prime&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- The dark, running along the top of the page -->
+<div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+        <span>Ezekiel Robinson is an Artist, confronted by The dark, finally, something he may consume. And he could hear his own water trickling in the distance. He slipped, And noticed the thin damp film on the rocks had become ice Where the moonlight touched it. Still elated by the harvest, Ezekiel continued to eat the darkness, perhaps with more caution now, Periodically lifting his eyes, but never his head, never his mouth.. Ezekiel Robinson finds more comfort crawling, Changing the orientation of his body around his neck. Gyroscopically stabilizing his own head. To reposition those eyes towards the sound of damp footsteps. From this distance, he could see your silhouette. Slowly, silently, and methodically slicing through his dark sinewy feast. Having the dark lightly fall off of your surface, wrapping your form first, like feathers. It reminded Ezekiel of the crows, and crows remind him of memory, of facial recognition, of the type of animosity that can’t develop from a photo but can be captured on film. A medium that REQUIRES and can only express the passage of time. He contorted his body so that he may watch your approach while he simultaneously attempted to eat eat eat as much of the darkness as he could. Breathing became less of a priority as Ezekiel shoveled and slurped more darkness into his mouth leaving less and less space for air. You arrived at the orafice from which he was feeding quickly but motioned towards him so slowly. You wanted to watch him choking we suppose. And So Ezekiel choked and shoveled more violently. In hindsight it was just your gentle nature. You embraced his twisted body, while his focus was solely dedicated to consumption. Slowly but surely his neck began to unravel itself. Ezekiel’s body untwisted and straightened, his arms stopped their frantic flailing and shoveling, his mouth and neck slowly allowed more air, all while still consuming, slowly waining in manic desire. Until his lips finally began to purse and spit.</span>
+    </div>
+</div>
+
+<!-- Random letters falling behind the book -->
+<div id="falling" class="falling" aria-hidden="true"></div>
+
+<main class="desk">
+    <div class="stage">
+        <div id="book" class="book" aria-live="polite"></div>
+    </div>
+    <nav class="controls" aria-label="Book navigation">
+        <button id="prev" class="arrow" aria-label="Previous page">&#8249;</button>
+        <button id="toc" class="pill">Contents</button>
+        <span id="where" class="where"></span>
+        <a class="pill store" href="https://12pub.company.site/" target="_blank" rel="noopener">Store&nbsp;&#8599;</a>
+        <button id="next" class="arrow" aria-label="Next page">&#8250;</button>
+    </nav>
+</main>
+
+<!--
+    THE PAGES
+    Each <section class="page"> is one page, in reading order. The script binds
+    them into leaves: two pages per leaf on wide screens, one on phones.
+    Keep the total an even number so the back cover lands on the back of the last leaf.
+    Images use data-src so they only load when you get near their page.
+-->
+<div id="pages" hidden>
+
+    <!-- 0 · Front cover -->
+    <section class="page cover no-folio" data-section="Cover">
+        <div class="cover-inner">
+            <p class="cover-mark">Ezekiel Robinson</p>
+            <h1>before beginning<br><em>without ending</em></h1>
+            <span class="cover-rule" aria-hidden="true"></span>
+            <p class="cover-hint">Turn the page&nbsp;&#8250;</p>
+        </div>
+    </section>
+
+    <!-- 1 · Contents -->
+    <section class="page" data-section="Contents">
+        <div class="pg toc-page">
+            <h2 class="toc-title">Contents</h2>
+            <ol class="toc">
+                <li><a href="#page-2" data-goto="2"><span class="num">I</span><span class="t">Something I may consume, the dark.</span><span class="n">2</span></a></li>
+                <li><a href="#page-6" data-goto="6"><span class="num">II</span><span class="t">You're so sweet, your cigarette smoke taste like honey</span><span class="n">6</span></a></li>
+                <li><a href="#page-23" data-goto="23"><span class="num">III</span><span class="t">Juneteenth Liberation Tank</span><span class="n">23</span></a></li>
+                <li><a href="#page-33" data-goto="33"><span class="num">IV</span><span class="t">I don’t do nothing.</span><span class="n">33</span></a></li>
+                <li><a href="#page-35" data-goto="35"><span class="num">V</span><span class="t">The A.B.S.</span><span class="n">35</span></a></li>
+                <li><a href="#page-38" data-goto="38"><span class="num">VI</span><span class="t">Curl, breakage, and the ephemerality of growth.</span><span class="n">38</span></a></li>
+                <li><a href="#page-48" data-goto="48"><span class="num">VII</span><span class="t">good is he who gives and recieves naught.</span><span class="n">48</span></a></li>
+                <li><a href="#page-57" data-goto="57"><span class="num"></span><span class="t">Create Yourself</span><span class="n">57</span></a></li>
+                <li><a href="#page-58" data-goto="58"><span class="num"></span><span class="t">Contact</span><span class="n">58</span></a></li>
+            </ol>
+            <p class="toc-note">Click a page, swipe, or use the arrow keys to turn it.</p>
+        </div>
+    </section>
+
+    <!-- 2 · I -->
+    <section class="page" data-section="I · Something I may consume, the dark.">
+        <div class="pg">
+            <h2 class="title"><span class="sec">I</span>Something I may consume, the dark.</h2>
+            <div class="verse">Ezekiel Robinson is an Artist, confronted by The dark, finally, something he may consume. And he could hear his own water trickling in the distance.
+He slipped,
+And noticed the thin damp film on the rocks had become ice Where the moonlight touched it.
+Still elated by the harvest,
+Ezekiel continued to eat the darkness,
+perhaps with more caution now,
+Periodically lifting his eyes,
+but never his head, never his mouth..
+Ezekiel Robinson finds more comfort crawling,
+Changing the orientation of his body around his neck.
+Gyroscopically stabilizing his own head.</div>
+        </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="page" data-section="I · Something I may consume, the dark.">
+        <div class="pg">
+            <p class="rh">Something I may consume, the dark.</p>
+            <div class="verse">To reposition those eyes towards the sound of damp footsteps.
+From this distance, he could see your silhouette.
+Slowly, silently, and methodically slicing through his dark sinewy feast.
+Having the dark lightly fall off of your surface, wrapping your form first, like feathers.
+It reminded Ezekiel of the crows, and crows remind him of memory, of facial recognition, of the type of animosity that can’t develop from a photo but can be captured on film. A medium that REQUIRES and can only express the passage of time.
+He contorted his body so that he may watch your approach while he simultaneously attempted to eat eat eat as much of the darkness as he could.</div>
+        </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="page" data-section="I · Something I may consume, the dark.">
+        <div class="pg">
+            <p class="rh">Something I may consume, the dark.</p>
+            <div class="verse">Breathing became less of a priority as Ezekiel shoveled and slurped more darkness into his mouth leaving less and less space for air.
+You arrived at the orafice from which he was feeding quickly but motioned towards him so slowly. You wanted to watch him choking we suppose. And So Ezekiel choked and shoveled more violently.
+In hindsight it was just your gentle nature.
+You embraced his twisted body, while his focus was solely dedicated to consumption.
+Slowly but surely his neck began to unravel itself. Ezekiel’s body untwisted and straightened, his arms stopped their frantic flailing and shoveling, his mouth and neck slowly allowed more air, all while still consuming, slowly waining in manic desire. Until his lips finally began to purse and spit.</div>
+            <p class="fin" aria-hidden="true">&#8258;</p>
+        </div>
+    </section>
+
+    <!-- 5 · Video -->
+    <section class="page" data-section="I · Something I may consume, the dark.">
+        <div class="pg media-page">
+            <p class="rh">Something I may consume, the dark.</p>
+            <div class="video">
+                <iframe data-src="https://www.youtube-nocookie.com/embed/tOtD5SWJHXY?enablejsapi=1&amp;rel=0" title="Video" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6 · II divider -->
+    <section class="page divider" data-section="II · You're so sweet, your cigarette smoke taste like honey">
+        <div class="pg">
+            <p class="div-num">II</p>
+            <h2 class="div-title long">You're so sweet, your cigarette smoke taste like honey</h2>
+            <p class="div-sub">Tap any page to read it up close</p>
+        </div>
+    </section>
+
+    <!-- 7–22 · Zine: You're so sweet (each PDF spread split into a left and right page) -->
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-01.jpg" alt="You're so sweet, page 1"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-02.jpg" alt="You're so sweet, page 2"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-03.jpg" alt="You're so sweet, page 3"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-04.jpg" alt="You're so sweet, page 4"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-05.jpg" alt="You're so sweet, page 5"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-06.jpg" alt="You're so sweet, page 6"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-07.jpg" alt="You're so sweet, page 7"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-08.jpg" alt="You're so sweet, page 8"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-09.jpg" alt="You're so sweet, page 9"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-10.jpg" alt="You're so sweet, page 10"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-11.jpg" alt="You're so sweet, page 11"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-12.jpg" alt="You're so sweet, page 12"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-13.jpg" alt="You're so sweet, page 13"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-14.jpg" alt="You're so sweet, page 14"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-15.jpg" alt="You're so sweet, page 15"></section>
+    <section class="page zine no-folio" data-section="II · You're so sweet, your cigarette smoke taste like honey"><img class="zoom" data-src="images/zine2/page-16.jpg" alt="You're so sweet, page 16"></section>
+
+    <!-- 23 · III divider -->
+    <section class="page divider" data-section="III · Juneteenth Liberation Tank">
+        <div class="pg">
+            <p class="div-num">III</p>
+            <h2 class="div-title">Juneteenth Liberation Tank</h2>
+        </div>
+    </section>
+
+    <!-- 24 · Photo -->
+    <section class="page plate bleed no-folio" data-section="III · Juneteenth Liberation Tank">
+        <figure class="pg">
+            <img class="zoom" data-src="images/tank-street.jpg" alt="The tank, built from children's ride-on toy cars, on a residential street">
+            <figcaption>Juneteenth Liberation Tank</figcaption>
+        </figure>
+    </section>
+
+    <!-- 25 -->
+    <section class="page" data-section="III · Juneteenth Liberation Tank">
+        <div class="pg prose">
+            <p class="rh">Juneteenth Liberation Tank</p>
+            <p class="dropcap">Recently I’ve been thinking about celebrating, and celebrations in general. I was raised to love celebrations. Growing up, my mother would take my sister and I to our great grandmothers home in the middle of nowhere Georgia. My family would have cookouts what seemed like every week. Everyone in my family would be eating and drinking and laughing together. Every holiday was celebrated. Every birthday, every graduation. But even without an excuse or a justification there was always bound to be some sort of celebration. The times that I have come to live in have made the idea of celebration seem to me, unjustifiable. The overwhelming feeling of apocalyptic doom settles upon us all everyday. I currently feel like there are ways in which the world has already ended. The more troubling portion of that realization is that those failed parts of the world must have come to an end before I was born.</p>
+            <p>My great grandmother lived in a post apocalyptic world and so did every other member of my family since their touching down in America. I would be surprised to find if there was ever a member of my family, regardless of the conditions of their life, or the condition of the society they inhabited, never found at least one moment to celebrate. The desire to celebrate does not come from the need to escape.</p>
+        </div>
+    </section>
+
+    <!-- 26 -->
+    <section class="page" data-section="III · Juneteenth Liberation Tank">
+        <div class="pg prose">
+            <p class="rh">Juneteenth Liberation Tank</p>
+            <blockquote class="pull">Celebration is the first and final step to create a new world.</blockquote>
+            <p class="lead">Celebration occurs as the acknowledgement of present resources and potential.</p>
+            <p>Regardless of this I still feel an overwhelming amount of guilt whenever I celebrate. Especially when I celebrate my own “achievements”. Celebrating artistic accomplishments is especially problematic for me. I'm constantly questioning what purpose my art is serving. Allegedly the function of good art is to inspire new good art. To continue humanity’s long creative history. And so it is my job as an artists to work and live to inspire creative pursuits. The inventor of the wheel would be happy to meet me? Is what it seems like i'm assuming. The level of fulfillment they would have to know that their art, their engineering has spawned an endless amount of subsequent creations.</p>
+            <p>“Juneteenth Liberation Tank” is a celebration but it also represents my relationship with celebrating. A relationship I believe I share with others of a similar history</p>
+        </div>
+    </section>
+
+    <!-- 27 · Photo -->
+    <section class="page plate no-folio" data-section="III · Juneteenth Liberation Tank">
+        <figure class="pg">
+            <img class="zoom tipped" data-src="images/tank-peace-center.jpg" alt="The tank beside a Rayshard Brooks Peace Center banner and an orange BLM traffic cone">
+            <figcaption>Juneteenth Liberation Tank<br><span>Rayshard Brooks Peace Center</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 28 · Photo -->
+    <section class="page plate bleed no-folio" data-section="III · Juneteenth Liberation Tank">
+        <figure class="pg">
+            <img class="zoom" data-src="images/tank-crew.jpg" alt="Two people inside the tank, one holding up a power tool, in front of a house">
+        </figure>
+    </section>
+
+    <!-- 29 · Photo -->
+    <section class="page plate bleed no-folio" data-section="III · Juneteenth Liberation Tank">
+        <figure class="pg">
+            <img class="zoom" data-src="images/tank-family.jpg" alt="A woman and two children in red, white and blue standing in front of the tank in a parking lot">
+        </figure>
+    </section>
+
+    <!-- 30 · Photo -->
+    <section class="page plate bleed no-folio" data-section="III · Juneteenth Liberation Tank">
+        <figure class="pg">
+            <img class="zoom" data-src="images/tank-guard.jpg" alt="Five young men standing in front of the tank">
+        </figure>
+    </section>
+
+    <!-- 31 · Photo -->
+    <section class="page plate no-folio" data-section="III · Juneteenth Liberation Tank">
+        <figure class="pg">
+            <img class="zoom" data-src="images/tank-wendys.jpg" alt="The artist leaning on a BLM traffic cone beside the tank, in front of a burned building">
+            <figcaption>Juneteenth Liberation Tank</figcaption>
+        </figure>
+    </section>
+
+    <!-- 32 · Video -->
+    <section class="page" data-section="III · Juneteenth Liberation Tank">
+        <div class="pg media-page">
+            <p class="rh">Juneteenth Liberation Tank</p>
+            <div class="video">
+                <iframe data-src="https://www.youtube-nocookie.com/embed/raE1NC8o0r8?enablejsapi=1&amp;rel=0" title="Juneteenth Liberation Tank video" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+            </div>
+            <p class="caption">Juneteenth Liberation Tank</p>
+        </div>
+    </section>
+
+    <!-- 33 · IV -->
+    <section class="page" data-section="IV · I don’t do nothing.">
+        <div class="pg prose">
+            <h2 class="title"><span class="sec">IV</span>I don’t do nothing.</h2>
+            <img class="zoom inset" data-src="images/i-dont-do-nothing.jpg" alt="Three photos of the artist wearing the suit of armor made from sneakers, denim, cardboard and playing cards">
+            <p>Designed for the protection of young black men, it is a mechanized, mobile suit. It is constructed out of repurposed fabric, sneakers, denim, plastic, playing cards and cardboard. It consists of a helmet, chest armor, and two leg gauntlets with boots. I made this work as a direct response to the $1200 coronavirus stimulus check issued by the federal government.</p>
+        </div>
+    </section>
+
+    <!-- 34 -->
+    <section class="page" data-section="IV · I don’t do nothing.">
+        <div class="pg prose">
+            <p class="rh">I don’t do nothing.</p>
+            <p class="cont">The check was meant to protect individuals from the economic repercussions of the virus. That issue of protection felt salient to me as I thought about the toxic aspects of black consumerism. As a young man who moved from a rural community to an urban one, I have at times attached my self worth directly to the symbols I placed on my body. I don’t do nothing reflects the weight of corporate logos and institutions on the black self image while also addressing the feeling of necessity that black people often feel in acquiring branded possessions that offer a type of protection from the oppressive forces that all black people face. If Nike or Ralph Lauren were to create suits of armors with their logos, it is not hard to imagine them being sold for $1200 or more. What does it mean that this amount, decided upon by the Trump administration, is then deemed the cost of protecting black life?</p>
+        </div>
+    </section>
+
+    <!-- 35 · V -->
+    <section class="page" data-section="V · The A.B.S.">
+        <div class="pg prose">
+            <h2 class="title"><span class="sec">V</span>The A.B.S.</h2>
+            <p class="dropcap">The A.B.S. is my attempt to make something that “works” autonomously. It can be turned on and left, it doesn't need me to operate. It also highlights the irony of “work”. Fundamentally it's just a wheel that turns. I've never felt like more than just a wheel turning at any job I've ever held. Beyond my personal experience with “work” it also highlights our biases against not only the homeless, but anyone that seeks help in a society that is designed to remove empathy from each of us and replace that empathy with the blind desire to collect life tokens (dollar bills). Even myself acknowledging this, I would quickly trade my last bit of empathy for a 2020 amg benz truck, or the wealth to acquire one of my own, easy. I would quickly trade my humble position in this society for heated seats, a turbo mode, and some cold AC for the muggy Georgia weather.</p>
+        </div>
+    </section>
+
+    <!-- 36 -->
+    <section class="page" data-section="V · The A.B.S.">
+        <div class="pg prose">
+            <p class="rh">The A.B.S.</p>
+            <p class="cont">To be able to roll up my tinted windows and block both the smell and the sound of those depraved folk walking up to my window to ask me for a dollar, or even just 37 cent. I’d do anything to tint my windows dark enough as so they couldn’t see me enjoying that new Yak Gotti “slatt walk” blasting from my custom Bose stereo sound system driving down metropolitan, prolly enjoying 10 pieces of some deliciously fried, thoroughly sauced, morsel of seafood being fed to me by the pristinely manicured hands of my lover, who’s “new body” is still wrapped in bloody bandages, her body just as fresh off of the surgeons table as my shrimp is fresh off the coast of Maine. But whatever, basically the thing works, but it's a beggar so it doesn't work, that's the joke. There's a few more jokes I could get into, like the impending automation of the “professional” class or the pandemic being used to justify an even more cold and unfeeling world, by design. But in the interest of concision and in the anticipation that i will speak another day, I’m finna stop.</p>
+        </div>
+    </section>
+
+    <!-- 37 · Videos -->
+    <section class="page" data-section="V · The A.B.S.">
+        <div class="pg media-page two">
+            <p class="rh">The A.B.S.</p>
+            <div class="video">
+                <iframe data-src="https://www.youtube-nocookie.com/embed/Q1eYRIpT7l0?enablejsapi=1&amp;rel=0" title="The A.B.S. video" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+            </div>
+            <div class="video">
+                <iframe data-src="https://www.youtube-nocookie.com/embed/zlhMq5KpjUE?enablejsapi=1&amp;rel=0" title="Video" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 38 · VI divider -->
+    <section class="page divider" data-section="VI · Curl, breakage, and the ephemerality of growth.">
+        <div class="pg">
+            <p class="div-num">VI</p>
+            <h2 class="div-title long">Curl, breakage, and the ephemerality of growth.</h2>
+        </div>
+    </section>
+
+    <!-- 39–42 · Photos -->
+    <section class="page plate bleed dark no-folio" data-section="VI · Curl, breakage, and the ephemerality of growth.">
+        <figure class="pg"><img class="zoom" data-src="images/curl-night-1.jpg" alt="Curl-shaped cutouts glowing with light at night"></figure>
+    </section>
+    <section class="page plate bleed dark no-folio" data-section="VI · Curl, breakage, and the ephemerality of growth.">
+        <figure class="pg"><img class="zoom" data-src="images/curl-night-2.jpg" alt="Curl-shaped cutouts glowing at dusk in front of trees"></figure>
+    </section>
+    <section class="page plate bleed no-folio" data-section="VI · Curl, breakage, and the ephemerality of growth.">
+        <figure class="pg"><img class="zoom" data-src="images/curl-room.jpg" alt="Curl-shaped holes cut through a ceiling, letting daylight into a gutted room"></figure>
+    </section>
+    <section class="page plate bleed no-folio" data-section="VI · Curl, breakage, and the ephemerality of growth.">
+        <figure class="pg"><img class="zoom" data-src="images/curl-room-portrait.jpg" alt="The artist sitting in an orange chair beneath the curl-shaped holes in the ceiling"></figure>
+    </section>
+
+    <!-- 43 -->
+    <section class="page" data-section="VI · Curl, breakage, and the ephemerality of growth.">
+        <div class="pg">
+            <p class="rh">Curl, breakage, and the ephemerality of growth.</p>
+            <div class="verse">Tree limbs look so lighthearted, until they fall.
+A tree swaying in the wind has a jovial appeal.
+The wind pushing its trunk backwards, bending. It looks like the trees are laughing at us.
+
+I’m made of soft flesh but for some reason I cannot bend so far.
+Unless I’m laughing.
+
+Ho ho ho baby! It’s Christmas time! All the time! On my side.
+Dysfunction is our gift.
+And for those of you that don’t behave:</div>
+            <p class="notice">You are further notified that the landlord hereby elects to declare that forfeiture of your lease under which you hold possession of the premises if you fail to perform or otherwise comply such non compliance will institute legal proceeding to recover _________ and possession of said premises.</p>
+        </div>
+    </section>
+
+    <!-- 44 -->
+    <section class="page" data-section="VI · Curl, breakage, and the ephemerality of growth.">
+        <div class="pg">
+            <p class="rh">Curl, breakage, and the ephemerality of growth.</p>
+            <div class="verse">Lucky me, my pockets got the knots. My walls, my floors, my roof, all got the knots.
+Even when you can’t find me, you can see through me, you can always find the effigies I never meant to leave behind.
+Check the drain.
+I’m just a budding off of gods curly little head.
+I hit the ground and continued to grow.
+Looping with all the other broken loops.
+
+Let’s go back and forth honey bun, ok I’ll start-
+You laugh too much and that’s the fucking problem
+My shit is all over the place and that’s called SINCERITY.
+You still think things happen on accident, these things are Sincerely Broken
+
+Sacrifice is the hallmark of true love.
+Everything I lost on the way here is insignificant, now that I know
+I’m here.
+You’ve been beaten and your assailants left the blood behind for me to find.
+Tell me something I can do to redeem you and don’t use the word “revenge”.</div>
+        </div>
+    </section>
+
+    <!-- 45 -->
+    <section class="page" data-section="VI · Curl, breakage, and the ephemerality of growth.">
+        <div class="pg">
+            <p class="rh">Curl, breakage, and the ephemerality of growth.</p>
+            <div class="verse">Let’s focus on you.
+First, let’s clean up this mess.
+Ok now back to you.
+You’re only 7 percent blood anyways.
+It’s mostly just water.
+Those stains will come right out.
+Now let’s soak those knots.
+I washed your clothes, and folded them.
+You probably want to bathe alone.
+
+I would give my life for yours.
+Sincerely,
+I would lay and let them kill me instead.
+I will live my life for yours.
+I won’t lay and kill myself.</div>
+            <blockquote class="verse quote">“I heard a woman weeping on the train,
+I tried to find her in my train car,
+Only to discover the weeping came from the train itself.
+Something about this particular journey must have
+Brought the machine to tears.”</blockquote>
+        </div>
+    </section>
+
+    <!-- 46 -->
+    <section class="page" data-section="VI · Curl, breakage, and the ephemerality of growth.">
+        <div class="pg">
+            <p class="rh">Curl, breakage, and the ephemerality of growth.</p>
+            <div class="verse">Let me comb your hair.
+Look at all you had to let go.
+Look back at me but you don’t have to smile.
+I remember when you grabbed my chin and kissed my lips.
+I drew it on a sheet of paper. Now my memory has mass and weight. Height and width. Value and white space.
+Now my memory can burn and be used as the kindling to
+Keep us warm. My memory can fold now.
+My memory can sop up a watery mess.
+My memory can be hung.
+Framed. Put up on display and sold.
+And ultimately I have to thank the trees that were surveilled their entire lives, until they were eventually mowed down for the sake of industry.
+And that newly barren, sap soaked land
+Is the cost of not letting go</div>
+            <p class="fin" aria-hidden="true">&#8258;</p>
+        </div>
+    </section>
+
+    <!-- 47 · Video -->
+    <section class="page" data-section="VI · Curl, breakage, and the ephemerality of growth.">
+        <div class="pg media-page">
+            <p class="rh">Curl, breakage, and the ephemerality of growth.</p>
+            <div class="video">
+                <iframe data-src="https://www.youtube-nocookie.com/embed/RflZkU1apMM?enablejsapi=1&amp;rel=0" title="Video" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 48 · VII divider -->
+    <section class="page divider" data-section="VII · good is he who gives and recieves naught.">
+        <div class="pg">
+            <p class="div-num">VII</p>
+            <h2 class="div-title long">good is he who gives and recieves naught.</h2>
+            <p class="div-sub">Tap any page to read it up close</p>
+        </div>
+    </section>
+
+    <!-- 49–56 · Zine: good is he who gives -->
+    <section class="page zine no-folio" data-section="VII · good is he who gives and recieves naught."><img class="zoom" data-src="images/zine1/page-01.jpg" alt="good is he who gives and recieves naught, page 1"></section>
+    <section class="page zine no-folio" data-section="VII · good is he who gives and recieves naught."><img class="zoom" data-src="images/zine1/page-02.jpg" alt="good is he who gives and recieves naught, page 2"></section>
+    <section class="page zine no-folio" data-section="VII · good is he who gives and recieves naught."><img class="zoom" data-src="images/zine1/page-03.jpg" alt="good is he who gives and recieves naught, page 3"></section>
+    <section class="page zine no-folio" data-section="VII · good is he who gives and recieves naught."><img class="zoom" data-src="images/zine1/page-04.jpg" alt="good is he who gives and recieves naught, page 4"></section>
+    <section class="page zine no-folio" data-section="VII · good is he who gives and recieves naught."><img class="zoom" data-src="images/zine1/page-05.jpg" alt="good is he who gives and recieves naught, page 5"></section>
+    <section class="page zine no-folio" data-section="VII · good is he who gives and recieves naught."><img class="zoom" data-src="images/zine1/page-06.jpg" alt="good is he who gives and recieves naught, page 6"></section>
+    <section class="page zine no-folio" data-section="VII · good is he who gives and recieves naught."><img class="zoom" data-src="images/zine1/page-07.jpg" alt="good is he who gives and recieves naught, page 7"></section>
+    <section class="page zine no-folio" data-section="VII · good is he who gives and recieves naught."><img class="zoom" data-src="images/zine1/page-08.jpg" alt="good is he who gives and recieves naught, page 8"></section>
+
+    <!-- 57 · Create Yourself (a page you can draw on) -->
+    <section class="page draw-page" data-section="Create Yourself">
+        <div class="pg">
+            <h2 class="title">Create Yourself</h2>
+            <div class="canvas-wrap"><canvas id="whiteboard" aria-label="Drawing page"></canvas></div>
+            <div class="tools">
+                <button type="button" id="penButton" class="on">Draw</button>
+                <button type="button" id="eraserButton">Erase</button>
+                <button type="button" id="clearButton">Clear</button>
+                <button type="button" id="saveButton">Save</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 58 · Contact -->
+    <section class="page" data-section="Contact">
+        <div class="pg contact">
+            <h2 class="title">Contact</h2>
+            <p class="contact-name">Ezekiel Robinson</p>
+            <p><a href="tel:+17062515119">706 251 5119</a></p>
+            <p><a href="mailto:1twopub@gmail.com">1twopub@gmail.com</a></p>
+            <p class="contact-store"><a href="https://12pub.company.site/" target="_blank" rel="noopener">Store &#8599;</a></p>
+            <p class="colophon">&copy; 2024 Art Portfolio</p>
+        </div>
+    </section>
+
+    <!-- 59 · Back cover -->
+    <section class="page cover back-cover no-folio" data-section="Back cover">
+        <div class="cover-inner">
+            <p class="back-line"><em>without end</em></p>
+            <span class="cover-rule" aria-hidden="true"></span>
+            <p class="cover-mark">E. R.</p>
+        </div>
+    </section>
+
+</div>
+
+<div id="lightbox" class="lightbox" hidden>
+    <button class="lb-close" aria-label="Close">&times;</button>
+    <img alt="">
+    <p class="lb-hint">Click the image to zoom</p>
+</div>
+
+<noscript>
+    <style>
+        #pages { display: block !important; }
+        #pages .page { position: static; max-width: 640px; margin: 2rem auto; background: #f2ebdd; }
+        #pages .pg { position: static; overflow: visible; }
+        body { overflow: auto; }
+    </style>
+</noscript>
+
+<script src="script.js"></script>
+</body>
+</html>
